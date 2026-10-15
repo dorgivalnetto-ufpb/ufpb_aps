@@ -1,6 +1,7 @@
 package composicao.exemplo01;
 
-public class Calculo15Minutos implements CalculoValor{
+public class Calculo15Minutos implements CalculoValor {
+
     private double valorPeriodo;
 
     public Calculo15Minutos(double valorPeriodo) {
@@ -9,7 +10,7 @@ public class Calculo15Minutos implements CalculoValor{
 
     @Override
     public double calcular(int tempoPermanencia) {
-        double periodo = (double)Math.ceil(tempoPermanencia * 60)/15;
-        return periodo * valorPeriodo;
+        int periodos = (int)Math.ceil((tempoPermanencia * 60)/15.0);
+        return periodos * valorPeriodo;
     }
 }
