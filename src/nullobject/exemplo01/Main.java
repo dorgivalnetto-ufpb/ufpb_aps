@@ -12,19 +12,20 @@ public class Main {
         System.out.println(b == null); //false
         b.ligar();
 
-        Oficina oficina = new Oficina();
-
+        Oficina oficina = new Oficina(new NotificadorReal());
         System.out.println("\nInjeção real");
         Carro gol = new Carro("Gol", new InjecaoeletronicaReal());
         System.out.println(gol.getModelo());
         oficina.revisar(gol);
 
+        Oficina oficina2 = new Oficina(new NotificadorNulo());
         System.out.println("\nInjeção null");
         Carro fusca = new Carro("Fusca", new InjecaoEletronicaNull());
-        oficina.revisar(fusca);
+        oficina2.revisar(fusca);
 
+        Oficina oficina3 = new Oficina(null);
         System.out.println("\nConverteu o objeto em Null Object");
         Carro carroAntigo = new Carro("Carro antigo", null);
-        oficina.revisar(carroAntigo);
+        oficina3.revisar(carroAntigo);
     }
 }
