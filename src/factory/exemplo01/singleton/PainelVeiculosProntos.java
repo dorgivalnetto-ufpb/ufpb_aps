@@ -10,6 +10,16 @@ public class PainelVeiculosProntos implements ObservadorRevisao {
 
     private final List<String> veiculosProntos = new ArrayList<>();
 
+    private static final PainelVeiculosProntos instancia = new PainelVeiculosProntos();
+
+    //Singleton
+    private PainelVeiculosProntos(){
+    }
+
+    public static PainelVeiculosProntos getInstancia(){
+        return instancia;
+    }
+
     @Override
     public void revisaoConcluida(Carro carro) {
         if(!veiculosProntos.contains(carro.getPlaca())){
@@ -20,7 +30,7 @@ public class PainelVeiculosProntos implements ObservadorRevisao {
     }
 
     public void exibirPainel(){
-        System.out.println("[Painel] Veículos prontos: " + veiculosProntos);
+        System.out.println("[Painel] Veículos prontos: " + veiculosProntos.toString());
     }
 
     public List<String> getVeiculosProntos(){

@@ -29,7 +29,7 @@ public class Oficina {
             throw new IllegalArgumentException("O carro não pode ser nulo");
         }
 
-        System.out.println("\n [Oficina] Revisão conluída: " + carro.getModelo() + carro.getPlaca());
+        System.out.println("\n [Oficina] Revisão concluída: " + carro.getModelo() + carro.getPlaca());
 
         notificarObservador(carro);
     }
