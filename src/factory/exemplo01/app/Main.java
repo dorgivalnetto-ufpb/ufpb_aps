@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Oficina oficina = new Oficina();
 
+        //observer
         oficina.revisar(new Carro("ABC4F56", "Corolla", "Ana"));
         oficina.revisar(new Carro("XVF4D32", "Civic", "Bruno"));
-
     }
 }
